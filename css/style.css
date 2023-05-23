@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  /* COLORS */
+  --Gray: rgb(155, 155, 155);
+  --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
+  --GrayishBlue2: hsl(212, 23%, 89%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+
+  /* TYPOGRAPHY */
+  --FontSizeDefault: 13px;
+
+  /* LAYOUT */
+  --MobileWidth: 730px;
+  --NotebookWidth: 1440px;
+}
+
+body {
+  max-width: var(--NotebookWidth);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  background-color: var(--LightGrayishBlue);
+  font-size: var(--FontSizeDefault);
+}
+
+.container {
+  max-width: 100%;
+  max-height: 284px;
+}
+
+.card {
+  max-width: 730px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 30px -12px var(--GrayishBlue);
+  filter: brightness(107%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imgCard {
+  width: 350px;
+  height: 282px;
+}
+
+.content {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 28px 40px;
+  margin-left: -65px;
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.content h2 {
+  font-size: 1.285rem;
+}
+
+.content p {
+  margin: 12px 0;
+  line-height: 1.25rem;
+}
+
+.personalData {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgAvatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
+.personalData p span {
+  color: var(--VeryDarkGrayishBlue);
+  font-weight: bold;
+}
+
+.personalData p {
+  width: 35%;
+  margin: 10px 0 10px -130px;
+  color: var(--GrayishBlue);
+}
+
+.iconShare {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--GrayishBlue2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconShareMobile {
+  display: none;
+}
+
+.share {
+  position: relative;
+  top: -161px;
+  right: -550px;
+  z-index: 9;
+  background-color: var(--VeryDarkGrayishBlue);
+  justify-content: space-between;
+  align-items: center;
+  width: 248px;
+  height: 57px;
+  border-radius: 8px;
+  padding: 10px 35px 8px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 6px 2px var(--GrayishBlue);
+  display: none;
+}
+
+.share h3 {
+  font-size: 0.8rem;
+  color: var(--GrayishBlue);
+  font-weight: lighter;
+  letter-spacing: 5px;
+  margin: 0 8px 0 0;
+}
+
+.shareArrow {
+  position: absolute;
+  z-index: -1;
+  width: 45px;
+  height: 45px;
+  bottom: -3px;
+  left: 40%;
+  transform: rotate(45deg);
+  background-color: var(--VeryDarkGrayishBlue);
+}
+
+.share ul {
+  display: flex;
+}
+
+.share ul li {
+  margin: 0 8px;
+}
+
+.share ul li a {
+  cursor: pointer;
+}
+
+.activeBalloon {
+  display: flex;
+  transition: all .5s easy;
+}
+
+.activeIcon {
+  background-color: var(--DesaturatedDarkBlue);
+}
+
+.activeIcon svg path {
+  fill: white;
+}
+
+.share .iconShare {
+  display: none;
+}
+
+@media screen and (max-width: 730px) {
+  body {
+    max-width: var(--MobileWidth);
+    justify-content: center;
+  }
+
+  .container {
+    max-width: 328px;
+    max-height: 513px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .imgCard {
+    margin-top: -16px;
+    width: 100%;
+    height: 99%;
+
+  }
+
+  .content {
+    margin: -46px 0 0;
+    padding: 36px 33px 22px;
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: 1.03rem;
+    line-height: 1.5rem;
+  }
+
+  .content p {
+    width: 99%;
+    font-size: .82rem;
+    margin-bottom: 32px;
+  }
+
+  .personalData p {
+    width: 50%;
+    margin: 0 0 0 -20px;
+    color: var(--GrayishBlue);
+  }
+
+  .share {
+    border-radius: 0;
+    width: 100%;
+    height: 65px;
+    top: -66px;
+    right: 0;
+    justify-content: flex-start;
+  }
+
+  .socialMedia {
+    margin: 0 45px 0 5px;
+  }
+
+  .share .iconShare {
+    display: block;
+    width: 27px;
+    height: 27px;
+    padding: 6px;
+  }
+ 
+}
